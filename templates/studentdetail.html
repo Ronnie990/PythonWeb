@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Estudiante</title>
+</head>
+<body>
+<h1>Detalle Estudiante</h1>
+<img width="200" height="200" src='{{url_for("static", filename=estudiante.foto)}}'/>
+<table>
+    <thead>
+        <tr>
+           <td><strong>Campos</strong></td>
+           <td><strong>Datos</strong></td>
+        </tr>
+    </thead>
+<tbody>
+
+    {%for key in estudiante.keys()%}
+    {% if key != "foto"%}
+    <tr>
+        <td><strong>{{key}}</strong></td>
+        <td>{{estudiante[key]}}</td>
+    </tr>
+    {%endif%}
+    {% endfor %}
+ </tbody>
+</table>
+</body>
+</html>
