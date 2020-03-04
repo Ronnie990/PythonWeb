@@ -1,5 +1,4 @@
 from flask import Flask,render_template
-from estudiantes import Estudiantes
 
 app = Flask(__name__)
 
@@ -17,7 +16,6 @@ listaestudiantes=[
 
 @app.route("/")
 def index():
-    products=["Mouse","computador","television","lavadora"]
     return render_template("index.html")
 
 @app.route("/students")
